@@ -9,6 +9,7 @@ import UserCards from "../../components/UserCards";
 import TableSearch from "../../components/TableSearch";
 import InstanceTable from "../../components/InstanceTable";
 import EmptyTable from "../../components/EmptyTable";
+import CreateNewInstance from "../../modals/CreateNewInstance";
 
 const Main = () => {
   return (
@@ -28,6 +29,7 @@ const Main = () => {
       <TableSearch />
       {/* <InstanceTable /> */}
       <EmptyTable/>
+      <CreateNewInstance/>
     </Stack>
   );
 };
