@@ -8,7 +8,7 @@ const SharedUserLayout = () => {
   return (
     <Stack direction="column" sx={{position: 'relative'}}>
       <TopBar />
-      <Grid container sx={{zIndex:'-1'}} spacing={4} sx={{}}>
+      <Grid container sx={{zIndex:'-1'}} spacing={4} >
         <Grid item xs={2}>
           <SideBar />
         </Grid>
