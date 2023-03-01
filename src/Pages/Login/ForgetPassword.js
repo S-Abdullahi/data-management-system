@@ -1,6 +1,8 @@
 import { Box, Button, Card, Link, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Title from '../../components/Title'
+
 
 const ForgetPassword = () => {
   return (
@@ -13,6 +15,7 @@ const ForgetPassword = () => {
       alignItems: "center",
     }}
   >
+    <Title/>
     <Card
       sx={{
         display: "flex",

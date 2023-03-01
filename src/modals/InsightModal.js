@@ -1,42 +1,31 @@
-import {
-  Drawer,
-  Typography,
-  Box,
-  Paper,
-  IconButton,
-  Stack,
-  Card,
-  CardContent,
-  Avatar,
-} from "@mui/material";
+import { Drawer, Typography, Box, Paper, IconButton, Stack, Card, CardContent, Avatar,  } from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import peopleVerified from "../assets/peopleVerified.svg";
 import peopleRejected from "../assets/peopleRejected.svg";
 import peoplePendingVerification from "../assets/peoplePendingVerification.svg";
 
-const instanceDetails = [
-  {
+const instanceDetails = [{
     icon: peopleVerified,
-    title: "Total Instance",
-    value: 12,
-  },
-  {
+    title: 'Total Instance',
+    value: 12
+},{
     icon: peoplePendingVerification,
-    title: "Total Instance",
-    value: 12,
-  },
-  {
+    title: 'Total Instance',
+    value: 12
+},
+{
     icon: peopleRejected,
-    title: "Total Instance",
-    value: 12,
-  },
-  {
+    title: 'Total Instance',
+    value: 12
+},
+{
     icon: peopleRejected,
-    title: "Total Instance",
-    value: 12,
-  },
-];
+    title: 'Total Instance',
+    value: 12
+}
+]
+
 
 const InsightModal = () => {
   return (
@@ -60,14 +49,13 @@ const InsightModal = () => {
         </Paper>
         <Stack
           direction="column"
-          //   justifyContent="space-between"
+        //   justifyContent="space-between"
           spacing={2}
-          sx={{ padding: 5 }}
+          sx={{padding: 5}}
         >
-          {instanceDetails.map((detail, index) => {
-            const { icon, title, value } = detail;
-            return (
-              <Card sx={{}} variant="outlined">
+            {instanceDetails.map((detail,index)=>{
+                const {icon, title, value} = detail
+                return <Card sx={{ }} variant="outlined">
                 <CardContent sx={{ display: "flex", alignItems: "center" }}>
                   <Avatar
                     alt="people verified"
@@ -81,15 +69,17 @@ const InsightModal = () => {
                       alignItems: "center",
                     }}
                   >
-                    <Typography sx={{ fontSize: "14px" }}>{title}</Typography>
+                    <Typography sx={{ fontSize: "14px" }}>
+                      {title}
+                    </Typography>
                     <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
                       {value}
                     </Typography>
                   </Box>
                 </CardContent>
               </Card>
-            );
-          })}
+            })}
+         
         </Stack>
       </Box>
     </Drawer>

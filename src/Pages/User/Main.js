@@ -11,6 +11,8 @@ import InstanceTable from "../../components/InstanceTable";
 import EmptyTable from "../../components/EmptyTable";
 import CreateNewInstance from "../../modals/CreateNewInstance";
 import InsightModal from "../../modals/InsightModal";
+import EditInstance from "../../modals/EditInstance";
+import { Edit } from "@mui/icons-material";
 
 const Main = () => {
   return (
@@ -31,7 +33,8 @@ const Main = () => {
       {/* <InstanceTable /> */}
       <EmptyTable/>
       {/* <CreateNewInstance/> */}
-      <InsightModal/>
+      {/* <InsightModal/> */}
+      <EditInstance/>
     </Stack>
   );
 };

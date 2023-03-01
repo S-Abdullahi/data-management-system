@@ -9,7 +9,8 @@ import {
 import { Box, Stack } from "@mui/system";
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import Logo from "../../assets/logo.svg";
+import Title from "../../components/Title";
 const LoginPage = () => {
   return (
     <Box
@@ -21,42 +22,56 @@ const LoginPage = () => {
         alignItems: "center",
       }}
     >
+      <Title/>
       <Card
+        elevation={3}
         sx={{
-          display: "flex",
-          flexDirection: "column",
           width: "360px",
-          padding: "40px",
         }}
       >
-        <Typography variant="body2" mb={4}>
-          Sign in with your email
-        </Typography>
-        <TextField
-          label="email"
-          variant="outlined"
-          sx={{ marginBottom: "20px" }}
-        />
-        <TextField label="password" type="password" variant="outlined" />
-        <Link
+        <Box
           sx={{
-            marginTop: "8px",
-            marginBottom: "20px",
-            textDecoration: "none",
-            cursor: "pointer",
+            padding: "15px",
+            paddingLeft: "30px",
+            borderBottom: "1px solid #E0E0E0",
           }}
         >
-          <NavLink to="/forget_password" style={{textDecoration: 'none'}}>Forget Password?</NavLink>
-        </Link>
-        <Button variant="contained" sx={{ textTransform: "none" }}>
-          Sign in
-        </Button>
-        <Typography variant="body2" mt={2}>
-          By Signing in, you are agreeing to out{" "}
-          <Link sx={{ textDecoration: "none" }}>
-            Terms & Conditions and Privacy Policy
+          <Typography
+            variant="h4"
+            sx={{ fontSize: "14px", fontWeight: 400, color: "#393A4A" }}
+          >
+            Sign in with your email
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", flexDirection: "column", padding: "40px" }}>
+          <TextField
+            label="email"
+            variant="outlined"
+            sx={{ marginBottom: "20px" }}
+          />
+          <TextField label="password" type="password" variant="outlined" />
+          <Link
+            sx={{
+              marginTop: "8px",
+              marginBottom: "20px",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            <NavLink to="/forget_password" style={{ textDecoration: "none" }}>
+              Forget Password?
+            </NavLink>
           </Link>
-        </Typography>
+          <Button variant="contained" sx={{ textTransform: "none" }}>
+            Sign in
+          </Button>
+          <Typography variant="body2" mt={2} fontSize="12px">
+            By Signing in, you are agreeing to out{" "}
+            <Link sx={{ textDecoration: "none" }}>
+              Terms & Conditions and Privacy Policy
+            </Link>
+          </Typography>
+        </Box>
       </Card>
     </Box>
   );

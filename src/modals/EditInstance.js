@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Drawer,
   Box,
@@ -11,14 +12,19 @@ import {
   Avatar,
   Checkbox,
 } from "@mui/material";
-import React from "react";
 import civilServant from "../assets/civilServant.svg";
 import civilServant2 from "../assets/civilServant2.svg";
 import civilServant3 from "../assets/civilServant3.svg";
-import GroupFolder from "../assets/groupfolders.svg";
+import fileType from "../assets/fileType.svg";
+import CombinedShape from "../assets/CombinedShape.svg";
+import Rectangle from "../assets/Rectangle.svg";
 import CloseIcon from "@mui/icons-material/Close";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import DeleteIcon from "@mui/icons-material/Delete";
+import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
+import { pink } from "@mui/material/colors";
 
-const CreateNewInstance = () => {
+const EditInstance = () => {
   return (
     <Drawer anchor="right" open="true" width="600px">
       <Box>
@@ -31,7 +37,9 @@ const CreateNewInstance = () => {
             padding: "10px",
           }}
         >
-          <Typography variant='body' sx={{fontSize: '18px', fontWeight: 500}}>Add new instance</Typography>
+          <Typography variant="body" sx={{ fontSize: "18px", fontWeight: 500 }}>
+            Edit instance
+          </Typography>
           <IconButton>
             <CloseIcon />
           </IconButton>
@@ -39,54 +47,70 @@ const CreateNewInstance = () => {
         <Box width="600px" sx={{ padding: "10px" }}>
           <Stack
             direction="column"
-            spacing={2}
+            spacing={3}
             sx={{ marginTop: 2, marginBottom: 1 }}
           >
-            <TextField placeholder="Instance name" size="small"></TextField>
+            <TextField
+              placeholder="Instance name"
+              label="Instance name"
+              size="small"
+            ></TextField>
             <TextField
               type="url"
               label="url"
               placeholder="https://datamanagement.com"
               size="small"
             ></TextField>
-            <TextField placeholder="Admin name" size="small"></TextField>
+            <TextField
+              placeholder="Admin name"
+              label="Admin name"
+              size="small"
+            ></TextField>
             <TextField
               type="email"
               placeholder="Admin email"
               size="small"
+              label="Admin Email"
             ></TextField>
           </Stack>
           <Typography
             variant="body2"
-            sx={{ color: "#6B6C7E", marginBottom: 1, marginTop: 1 }}
+            sx={{ color: "#6B6C7E", marginBottom: 1, marginTop: 3.5 }}
           >
             Instance Logo
           </Typography>
-          <Paper
-            variant="outlined"
+          <Box
             sx={{
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
               alignItems: "center",
-              height: "145px",
+              gap: 2,
+              borderBottom: "solid 1px #E0E0E0",
+              paddingBottom: 2,
             }}
           >
-            <Avatar src={GroupFolder} alt="group folder"></Avatar>
-            <Typography variant="body" sx={{ fontSize: "16px" }}>
-              Drop your files here or{" "}
-              <Link sx={{ textDecoration: "none" }}>click here</Link> to upload
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ fontSize: "14px", color: " #6B6C7E" }}
-            >
-              Format (jpg, png, xls, pdf, csv, ppt). Maximum of 5MB
-            </Typography>
-          </Paper>
+            <InsertDriveFileOutlinedIcon fontSize="large" color="disabled" />
+            <Box>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: 500, fontSize: "16px", color: "#393A4A" }}
+              >
+                oyoLogo.png
+              </Typography>
+              <Typography
+                variant="body 2"
+                sx={{ fontSize: "14px", color: "#6B6C7E" }}
+              >
+                16 Feb, 2019 at 10:05 pm | 1.2MB
+              </Typography>
+            </Box>
+            <Box sx={{ marginLeft: 15, display: "flex", gap: 2 }}>
+              <VisibilityIcon color='disabled'/>
+              <DeleteIcon sx={{ color: pink[500] }} />
+            </Box>
+          </Box>
           <Typography
             variant="body2"
-            sx={{ color: "#6B6C7E", marginBottom: 1, marginTop: 1 }}
+            sx={{ color: "#6B6C7E", marginBottom: 1, marginTop: 3 }}
           >
             Select Modules
           </Typography>
@@ -183,23 +207,31 @@ const CreateNewInstance = () => {
               </Typography>
             </Paper>
           </Stack>
-          <Stack
+        </Box>
+        <Stack
             direction="row"
             marginTop={2}
+            paddingRight={3}
             spacing={4}
             justifyContent="flex-end"
+            alignItems="center"
+            backgroundColor='#F5F7FA'
+            height='90px'
           >
-            <Button variant="contained" size= 'large' sx={{ textTransform: "none" }}>
-              Create
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ textTransform: "none"}}
+            >
+              Update
             </Button>
             <Button variant="text" sx={{ textTransform: "none" }}>
               Cancel
             </Button>
           </Stack>
-        </Box>
       </Box>
     </Drawer>
   );
 };
 
-export default CreateNewInstance;
+export default EditInstance;

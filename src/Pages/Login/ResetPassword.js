@@ -15,6 +15,9 @@ import {
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../../assets/logo.svg"
+import Title from "../../components/Title";
+
 
 const ResetPassword = () => {
   return (
@@ -27,6 +30,8 @@ const ResetPassword = () => {
         alignItems: "center",
       }}
     >
+
+      <Title/>
       <Card
         sx={{
           display: "flex",
