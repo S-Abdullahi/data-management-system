@@ -32,7 +32,7 @@ const CreateNewInstance = () => {
             padding: "10px",
           }}
         >
-          <Typography>Add new instance</Typography>
+          <Typography variant='body' sx={{fontSize: '18px', fontWeight: 500}}>Add new instance</Typography>
           <IconButton>
             <CloseIcon />
           </IconButton>

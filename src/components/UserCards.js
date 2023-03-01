@@ -14,99 +14,58 @@ import peopleRejected from "../assets/peopleRejected.svg";
 import peoplePendingVerification from "../assets/peoplePendingVerification.svg";
 import React from "react";
 
+const instanceDetails = [
+  {
+    icon: peopleVerified,
+    title: "Total Instance",
+    value: 12,
+  },
+  {
+    icon: peoplePendingVerification,
+    title: "Total Instance",
+    value: 12,
+  },
+  {
+    icon: peopleRejected,
+    title: "Total Instance",
+    value: 12,
+  },
+  {
+    icon: peopleRejected,
+    title: "Total Instance",
+    value: 12,
+  },
+];
+
 const UserCards = () => {
   return (
     <Stack direction="row" justifyContent="space-between" spacing={4} sx={{}}>
-      <Card sx={{ flex: "1 1 0" }} variant="outlined">
-        <CardContent sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar
-            alt="people verified"
-            src={peopleVerified}
-            sx={{ marginRight: "10px" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ fontSize: "14px" }}>Total Instance</Typography>
-            <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
-              12
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-      <Card sx={{ flex: "1 1 0" }} variant="outlined">
-        <CardContent sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar
-            alt="people pending verification"
-            src={peoplePendingVerification}
-            sx={{ marginRight: "10px" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ fontSize: "14px", marginBottom: "5px" }}>
-              Active
-            </Typography>
-            <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
-              12
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-      <Card sx={{ flex: "1 1 0" }} variant="outlined">
-        <CardContent sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar
-            alt="people rejected"
-            src={peopleRejected}
-            sx={{ marginRight: "10px" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ fontSize: "14px", marginBottom: "5px" }}>
-              Suspended
-            </Typography>
-            <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
-              12
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
-      <Card sx={{ flex: "1 1 0" }} variant="outlined">
-        <CardContent sx={{ display: "flex", alignItems: "center" }}>
-          <Avatar
-            alt="people rejected"
-            src={peopleRejected}
-            sx={{ marginRight: "10px" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography sx={{ fontSize: "14px", marginBottom: "5px" }}>
-              Deactivated
-            </Typography>
-            <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
-              12
-            </Typography>
-          </Box>
-        </CardContent>
-      </Card>
+      {instanceDetails.map((detail, index) => {
+        const { icon, title, value } = detail;
+        return (
+          <Card sx={{ flex: "1 1 0" }} variant="outlined">
+            <CardContent sx={{ display: "flex", alignItems: "center" }}>
+              <Avatar
+                alt="people verified"
+                src={icon}
+                sx={{ marginRight: "10px" }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Typography sx={{ fontSize: "14px" }}>{title}</Typography>
+                <Typography sx={{ fontSize: "18px", color: "#9DA0A7" }}>
+                  {value}
+                </Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        );
+      })}
     </Stack>
   );
 };
