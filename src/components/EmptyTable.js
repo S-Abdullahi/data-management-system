@@ -1,8 +1,11 @@
 import { Avatar, Button, Paper, Typography } from "@mui/material";
 import React from "react";
 import EmptyTableIcon from "../assets/emptyTable.svg";
+import { useDispatch } from 'react-redux'
+import { openNewInstanceModal } from "../features/Modal/modalslice";
 
 const EmptyTable = () => {
+    const dispatch = useDispatch()
   return (
     <Paper
       variant="outlined"
@@ -35,7 +38,7 @@ const EmptyTable = () => {
       >
         You current do not have registered instance
       </Typography>
-      <Button variant="text" sx={{ textTransform: "none", cursor: "pointer" }}>
+      <Button variant="text" sx={{ textTransform: "none", cursor: "pointer" }} onClick={()=>dispatch(openNewInstanceModal())}>
         Add new
       </Button>
     </Paper>

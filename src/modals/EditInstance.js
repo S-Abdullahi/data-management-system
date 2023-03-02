@@ -15,9 +15,6 @@ import {
 import civilServant from "../assets/civilServant.svg";
 import civilServant2 from "../assets/civilServant2.svg";
 import civilServant3 from "../assets/civilServant3.svg";
-import fileType from "../assets/fileType.svg";
-import CombinedShape from "../assets/CombinedShape.svg";
-import Rectangle from "../assets/Rectangle.svg";
 import CloseIcon from "@mui/icons-material/Close";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeleteIcon from "@mui/icons-material/Delete";

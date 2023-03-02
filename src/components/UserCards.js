@@ -43,7 +43,7 @@ const UserCards = () => {
       {instanceDetails.map((detail, index) => {
         const { icon, title, value } = detail;
         return (
-          <Card sx={{ flex: "1 1 0" }} variant="outlined">
+          <Card sx={{ flex: "1 1 0" }} variant="outlined" key={index}>
             <CardContent sx={{ display: "flex", alignItems: "center" }}>
               <Avatar
                 alt="people verified"

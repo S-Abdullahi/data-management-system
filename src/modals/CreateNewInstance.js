@@ -17,10 +17,19 @@ import civilServant2 from "../assets/civilServant2.svg";
 import civilServant3 from "../assets/civilServant3.svg";
 import GroupFolder from "../assets/groupfolders.svg";
 import CloseIcon from "@mui/icons-material/Close";
+import { useDispatch } from "react-redux";
+import { closeNewInstanceModal } from "../features/Modal/modalslice";
 
 const CreateNewInstance = () => {
+    const dispatch = useDispatch()
   return (
-    <Drawer anchor="right" open="true" width="600px">
+    <Drawer
+      anchor="right"
+      open="true"
+      onClose={()=> dispatch(closeNewInstanceModal())}
+      width="600px"
+      sx={{ transition: "all 0.5s linear" }}
+    >
       <Box>
         <Paper
           variant="outlined"
@@ -31,9 +40,11 @@ const CreateNewInstance = () => {
             padding: "10px",
           }}
         >
-          <Typography variant='body' sx={{fontSize: '18px', fontWeight: 500}}>Add new instance</Typography>
+          <Typography variant="body" sx={{ fontSize: "18px", fontWeight: 500 }}>
+            Add new instance
+          </Typography>
           <IconButton>
-            <CloseIcon />
+            <CloseIcon onClick={()=>dispatch(closeNewInstanceModal())}/>
           </IconButton>
         </Paper>
         <Box width="600px" sx={{ padding: "10px" }}>
@@ -189,10 +200,14 @@ const CreateNewInstance = () => {
             spacing={4}
             justifyContent="flex-end"
           >
-            <Button variant="contained" size= 'large' sx={{ textTransform: "none" }}>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{ textTransform: "none" }}
+            >
               Create
             </Button>
-            <Button variant="text" sx={{ textTransform: "none" }}>
+            <Button variant="text" sx={{ textTransform: "none" }} onClick={()=>dispatch(closeNewInstanceModal())}>
               Cancel
             </Button>
           </Stack>

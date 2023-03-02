@@ -11,7 +11,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
 import Title from "../../components/Title";
+import { openNewInstanceModal as newInstanceModal } from "../../features/Modal/modalslice";
+import {useSelector, useDispatch} from 'react-redux'
+
 const LoginPage = () => {
+  const dispatch = useDispatch()
   return (
     <Box
       sx={{
@@ -22,7 +26,7 @@ const LoginPage = () => {
         alignItems: "center",
       }}
     >
-      <Title/>
+      <Title />
       <Card
         elevation={3}
         sx={{
@@ -62,7 +66,7 @@ const LoginPage = () => {
               Forget Password?
             </NavLink>
           </Link>
-          <Button variant="contained" sx={{ textTransform: "none" }}>
+          <Button variant="contained" sx={{ textTransform: "none" }} onClick={()=>dispatch(newInstanceModal())}>
             Sign in
           </Button>
           <Typography variant="body2" mt={2} fontSize="12px">

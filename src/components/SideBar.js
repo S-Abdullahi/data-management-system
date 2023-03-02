@@ -6,12 +6,12 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 const SideBar = () => {
   return (
     <Stack
-      width="232px"
+      width="15vw"
       height="90vh"
       bgcolor="#F8F7FA"
       direction="column"
       justifyContent="space-between"
-      sx={{ position: "absolute", zIndex: "-1" }}
+      sx={{ position: "absolute"}}
     >
       <Button
         sx={{ textTransform: "none", marginTop: "20px" }}
