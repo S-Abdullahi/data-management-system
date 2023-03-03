@@ -10,6 +10,7 @@ import TableSearch from "../../components/TableSearch";
 import InstanceTable from "../../components/InstanceTable";
 import EmptyTable from "../../components/EmptyTable";
 import CreateNewInstance from "../../Modals/CreateNewInstance";
+import CategoryCard from "../../components/subComponents/CategoryCard";
 import InsightModal from "../../Modals/InsightModal";
 import EditInstance from "../../Modals/EditInstance";
 import { Edit } from "@mui/icons-material";
@@ -42,6 +43,7 @@ const Main = () => {
       {/* <CreateNewInstance/> */}
       {/* <InsightModal/> */}
       {/* <EditInstance/> */}
+      <CategoryCard/>
     </Stack>
   );
 };
