@@ -8,8 +8,11 @@ import {
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import { openCategory } from "../features/Dropdown/categoryslice";
+import { useDispatch } from "react-redux";
 
 const TableSearch = () => {
+    const dispatch = useDispatch()
   return (
     <Stack direction="row" alignItems="center" spacing={2} marginTop={2}>
       <TextField
@@ -32,7 +35,7 @@ const TableSearch = () => {
           backgroundColor: "#F1F2F6",
           textTransform: "none",
         }}
-      >
+       onClick={()=> dispatch(openCategory())}>
         category
       </Button>
       <Button

@@ -10,8 +10,11 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useDispatch } from "react-redux";
+import {closeCategory} from '../../features/Dropdown/categoryslice'
 
 const CategoryCard = () => {
+    const dispatch = useDispatch()
   return (
     <Box width='255px'>
       <Card>
@@ -38,7 +41,7 @@ const CategoryCard = () => {
                 textTransform: "none",
                 backgroundColor: "#F0F5FF",
                 color: "#0050C8",
-              }}
+              }} onClick={()=>dispatch(closeCategory())}
             >
               Cancel
             </Button>

@@ -15,11 +15,13 @@ import InsightModal from "../../Modals/InsightModal";
 import EditInstance from "../../Modals/EditInstance";
 import { Edit } from "@mui/icons-material";
 import { openNewInstanceModal as newInstanceModal } from "../../features/Modal/modalslice";
+
 import {useSelector, useDispatch} from 'react-redux'
 
 const Main = () => {
     console.log(useSelector(store => store))
     const {openNewInstanceModal} = useSelector((store)=> store.modal)
+    const {openCategoryDropdown} = useSelector((store)=> store.category)
     const dispatch = useDispatch()
   return (
     <Stack sx={{ margin: 2, color: "#9DA0A7", marginRight: 4 }}>
@@ -43,7 +45,8 @@ const Main = () => {
       {/* <CreateNewInstance/> */}
       {/* <InsightModal/> */}
       {/* <EditInstance/> */}
-      <CategoryCard/>
+      {openCategoryDropdown && <CategoryCard/>}
+      {/* <CategoryCard/> */}
     </Stack>
   );
 };
