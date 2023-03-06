@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    openCategoryDropdown: false
+    openCategoryDropdown: false,
+    dropDownLocation: {},
 }
 
 const categorySlice = createSlice({
@@ -13,12 +14,15 @@ const categorySlice = createSlice({
         },
         closeCategory : (state,action) =>{
             state.openCategoryDropdown = false;
+        }, 
+        categoryLocation: (state, action) =>{
+            state.dropDownLocation = action.payload
         }
         
     }
 })
 
 
-export const {openCategory, closeCategory} = categorySlice.actions
+export const {openCategory, closeCategory, categoryLocation} = categorySlice.actions
 
 export default categorySlice.reducer

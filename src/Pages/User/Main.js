@@ -19,7 +19,6 @@ import { openNewInstanceModal as newInstanceModal } from "../../features/Modal/m
 import {useSelector, useDispatch} from 'react-redux'
 
 const Main = () => {
-    console.log(useSelector(store => store))
     const {openNewInstanceModal} = useSelector((store)=> store.modal)
     const {openCategoryDropdown} = useSelector((store)=> store.category)
     const dispatch = useDispatch()

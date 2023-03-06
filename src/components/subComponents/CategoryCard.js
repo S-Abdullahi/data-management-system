@@ -10,13 +10,14 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {closeCategory} from '../../features/Dropdown/categoryslice'
 
 const CategoryCard = () => {
+    const {center, top} = useSelector((store)=> store.category.dropDownLocation)
     const dispatch = useDispatch()
   return (
-    <Box width='255px'>
+    <Box width='255px' sx={{position: 'absolute', top: top, left: center }}>
       <Card>
         <CardContent>
           <TextField placeholder="search" size="small"></TextField>
