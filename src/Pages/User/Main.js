@@ -1,9 +1,5 @@
-import {
-  Stack,
-  Typography,
-  Box,
-} from "@mui/material";
-import Button from '@mui/material/Button';
+import { Stack, Typography, Box } from "@mui/material";
+import Button from "@mui/material/Button";
 import React from "react";
 import UserCards from "../../components/UserCards";
 import TableSearch from "../../components/TableSearch";
@@ -15,16 +11,18 @@ import InsightModal from "../../Modals/InsightModal";
 import EditInstance from "../../Modals/EditInstance";
 import { Edit } from "@mui/icons-material";
 import { openNewInstanceModal as newInstanceModal } from "../../features/Modal/modalslice";
+import StatusCard from "../../components/subComponents/statusCard";
 
-import {useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 
 const Main = () => {
-    const {openNewInstanceModal} = useSelector((store)=> store.modal)
-    const {openCategoryDropdown} = useSelector((store)=> store.category)
-    const dispatch = useDispatch()
+  const { openNewInstanceModal } = useSelector((store) => store.modal);
+  const { openCategoryDropdown } = useSelector((store) => store.category);
+  const {isOpenStatus} = useSelector((store) => store.status)
+
+  const dispatch = useDispatch();
   return (
     <Stack sx={{ margin: 2, color: "#9DA0A7", marginRight: 4 }}>
-        
       <Box
         sx={{
           display: "flex",
@@ -34,18 +32,23 @@ const Main = () => {
         }}
       >
         <Typography variant="body2">instance</Typography>
-        <Button variant="contained" onClick={()=>dispatch(newInstanceModal())}>Add now</Button>
+        <Button
+          variant="contained"
+          onClick={() => dispatch(newInstanceModal())}
+        >
+          Add now
+        </Button>
       </Box>
       <UserCards />
       <TableSearch />
       {/* <InstanceTable /> */}
-      <EmptyTable/>
-      {openNewInstanceModal && <CreateNewInstance/>}
+      <EmptyTable />
+      {openNewInstanceModal && <CreateNewInstance />}
       {/* <CreateNewInstance/> */}
       {/* <InsightModal/> */}
       {/* <EditInstance/> */}
-      {openCategoryDropdown && <CategoryCard/>}
-      {/* <CategoryCard/> */}
+      {openCategoryDropdown && <CategoryCard />}
+      {isOpenStatus && <StatusCard />}
     </Stack>
   );
 };
