@@ -8,8 +8,8 @@ import {
 import React, {useRef, useEffect} from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import { openCategory, categoryLocation } from "../features/Dropdown/categoryslice";
-import { openStatus, locateStatus } from "../features/Dropdown/statusSlice";
+import { openCategory,closeCategory, categoryLocation } from "../features/Dropdown/categoryslice";
+import { openStatus,closeStatus, locateStatus } from "../features/Dropdown/statusSlice";
 import { useDispatch } from "react-redux";
 
 const TableSearch = () => {
@@ -53,7 +53,10 @@ const TableSearch = () => {
           textTransform: "none",
         }}
         ref={catLocation}
-       onClick={()=> dispatch(openCategory())}>
+       onClick={()=>{
+        dispatch(openCategory())
+        dispatch(closeStatus())
+       } }>
         category
       </Button>
       <Button
@@ -72,7 +75,9 @@ const TableSearch = () => {
           textTransform: "none",
         }}
         ref={statusLocation}
-        onClick ={()=>dispatch(openStatus())}
+        onClick ={()=>{
+            dispatch(closeCategory())
+            dispatch(openStatus())}}
       >
         status
       </Button>

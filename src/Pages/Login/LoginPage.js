@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Box, Stack } from "@mui/system";
-import React from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/logo.svg";
 import Title from "../../components/Title";
@@ -16,6 +16,16 @@ import {useSelector, useDispatch} from 'react-redux'
 
 const LoginPage = () => {
   const dispatch = useDispatch()
+  const [data, setData] = useState({email: '', password: ''})
+
+  const handleChange = (e) =>{
+    setData(prev => {
+      return {...prev, [e.target.name] : e.target.value }
+    })
+  }
+  const submitForm = () => {
+    console.log(data)
+  }
   return (
     <Box
       sx={{
@@ -50,10 +60,15 @@ const LoginPage = () => {
         <Box sx={{ display: "flex", flexDirection: "column", padding: "40px" }}>
           <TextField
             label="email"
+            type='email'
             variant="outlined"
             sx={{ marginBottom: "20px" }}
+            name='email'
+            value={data.email}
+            onChange={handleChange}
+
           />
-          <TextField label="password" type="password" variant="outlined" />
+          <TextField label="password" type="password" variant="outlined" name='password' value={data.password} onChange={handleChange} />
           <Link
             sx={{
               marginTop: "8px",
@@ -66,7 +81,10 @@ const LoginPage = () => {
               Forget Password?
             </NavLink>
           </Link>
-          <Button variant="contained" sx={{ textTransform: "none" }} onClick={()=>dispatch(newInstanceModal())}>
+          <Button variant="contained" sx={{ textTransform: "none" }} onClick={()=>{
+            dispatch(newInstanceModal())
+            submitForm()
+          }}>
             Sign in
           </Button>
           <Typography variant="body2" mt={2} fontSize="12px">
