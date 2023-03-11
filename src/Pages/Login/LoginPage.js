@@ -13,6 +13,7 @@ import Logo from "../../assets/logo.svg";
 import Title from "../../components/Title";
 import { openNewInstanceModal as newInstanceModal } from "../../features/Modal/modalslice";
 import {useSelector, useDispatch} from 'react-redux'
+import axios from "axios";
 
 const LoginPage = () => {
   const dispatch = useDispatch()
@@ -23,8 +24,15 @@ const LoginPage = () => {
       return {...prev, [e.target.name] : e.target.value }
     })
   }
-  const submitForm = () => {
-    console.log(data)
+  const submitForm = async () => {
+    try{
+      const res = await axios.post('https://api.mdm.prunedge.org/api/v1/auth/login/', data)
+      console.log(res.data)
+    }
+    catch(error){
+      console.log(error)
+    }
+    // console.log(data)
   }
   return (
     <Box

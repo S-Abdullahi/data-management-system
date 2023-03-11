@@ -41,8 +41,8 @@ const Main = () => {
       </Box>
       <UserCards />
       <TableSearch />
-      <InstanceTable />
-      {/* <EmptyTable /> */}
+      {/* <InstanceTable /> */}
+      <EmptyTable />
       {openNewInstanceModal && <CreateNewInstance />}
       {/* <CreateNewInstance/> */}
       {/* <InsightModal/> */}
