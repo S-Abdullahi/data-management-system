@@ -11,7 +11,7 @@ const App = () => {
   return (
     <BrowserRouter>
     <Routes>
-      <Route path='login' element={<LoginPage/>}></Route>
+      <Route path='/' element={<LoginPage/>}></Route>
       <Route path='forget_password' element={<ForgetPassword/>}></Route>
       <Route path='reset_password' element={<ResetPassword/>}></Route>
       <Route path='user' element={<SharedUserLayout/>}>

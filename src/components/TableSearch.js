@@ -27,7 +27,7 @@ const TableSearch = () => {
         const statusLeft = statusLocation.current.getBoundingClientRect().left
         const statusRight = statusLocation.current.getBoundingClientRect().right
         const statusTop = statusLocation.current.getBoundingClientRect().top + 40
-        const statusCenter = (statusTop + statusRight) / 2
+        const statusCenter = (statusLeft + statusRight) / 2
         dispatch(locateStatus({statusCenter, statusTop}))
     },[])
   return (
